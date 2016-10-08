@@ -1,13 +1,13 @@
-import {DIRECTIVES} from './directives';
-import {PIPES} from './pipes';
-import {PROVIDERS} from './services';
+'use strict';
 
-export * from './directives';
-export * from './services';
-export * from './pipes';
+// Import all services
+import { SocketService } from './socket.service';
 
-export default {
-  directives: [DIRECTIVES],
-  pipes: [PIPES],
-  providers: [PROVIDERS]
-}
+// Export all services
+export * from './socket.service';
+
+// Export convenience property
+export const PROVIDERS: any[] = [
+  SocketService
+];
+

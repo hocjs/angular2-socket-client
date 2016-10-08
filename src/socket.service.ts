@@ -1,12 +1,12 @@
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 import * as io from 'socket.io-client';
 
 @Injectable()
 export class SocketService {
 
-  private url : string;
-  private socket : any;
+  private url: string;
+  private socket: any;
 
   constructor() {
 
@@ -25,11 +25,11 @@ export class SocketService {
       });
   }
 
-  public on(event : string) {
+  public on(event: string) {
     return Observable.fromEvent(this.socket, event);
   }
 
-  public emit(event : string, value : Object) {
+  public emit(event: string, value: Object) {
     this
       .socket
       .emit(event, value);
